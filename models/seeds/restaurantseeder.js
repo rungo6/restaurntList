@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")
-const Restaurant = require("../restaurant")
+const Restaurant = require("../restaurantlist")
 const restaurantList = require("../../restaurant.json").results
 
-mongoose.connect("mongodb://localhost/restaurant-list", {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

@@ -1,6 +1,6 @@
-<h1 class="mb-1 restaurant-show-title">新增餐廳</h1>
+<h1 class="mb-1 restaurant-show-title">編輯餐廳 - {{restaurantData.name}}</h1>
 <div class="container">
-  <form action="/restaurants" method="POST">
+  <form action="/restaurants/{{restaurantData._id}}?_method=PUT" method="POST">
     <div class="mb-3">
       <label for="name" class="form-label">店名<span class="text-danger">*</span></label>
       <input
@@ -9,6 +9,7 @@
         id="name"
         placeholder="Alpha 科技餐廳"
         name="name"
+        value="{{restaurantData.name}}"
         required
       />
     </div>
@@ -20,6 +21,7 @@
         id="name_en"
         placeholder="Alpha Tech Theme Restaurant"
         name="name_en"
+        value="{{restaurantData.name_en}}"
         required
       />
     </div>
@@ -32,6 +34,7 @@
         placeholder="美式"
         list="categoryOptions"
         name="category"
+        value="{{restaurantData.category}}"
         required
       />
       {{! 使用datalist，讓使用者可選擇或自行輸入 }}
@@ -45,7 +48,14 @@
     </div>
     <div class="mb-3">
       <label for="image" class="form-label">圖片連結<span class="text-danger">*</span></label>
-      <input type="url" class="form-control" id="image" name="image" required />
+      <input
+        type="url"
+        class="form-control"
+        id="image"
+        name="image"
+        value="{{restaurantData.image}}"
+        required
+      />
     </div>
     <div class="mb-3">
       <label for="location" class="form-label">地址<span class="text-danger">*</span></label>
@@ -55,6 +65,7 @@
         id="location"
         placeholder="台中市北屯區迷有這條路520號"
         name="location"
+        value="{{restaurantData.location}}"
         required
       />
     </div>
@@ -66,6 +77,7 @@
         id="phone"
         placeholder="04-23456789"
         name="phone"
+        value="{{restaurantData.phone}}"
         required
       />
     </div>
@@ -76,6 +88,7 @@
         class="form-control"
         id="google_map"
         name="google_map"
+        value="{{restaurantData.google_map}}"
         required
       />
     </div>
@@ -89,6 +102,7 @@
         max="5"
         step="0.1"
         name="rating"
+        value="{{restaurantData.rating}}"
         required
       />
     </div>
@@ -100,11 +114,11 @@
         rows="3"
         name="description"
         required
-      ></textarea>
+      >{{restaurantData.description}}</textarea>
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary">
-        新增餐廳
+        儲存修改
       </button>
       <a href="/">
         <button type="button" class="btn btn-outline-secondary">
@@ -112,7 +126,7 @@
         </button>
       </a>
       {{! 使用type="reset" 可以清除/還原輸入 }}
-      <button type="reset" class="btn btn-outline-danger">重新輸入</button>
+      <button type="reset" class="btn btn-outline-danger">還原輸入</button>
     </div>
   </form>
 </div>
