@@ -3,13 +3,29 @@ const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
 const restaurantsData = require('./restaurant.json').results
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
-app.engine('handlebars',exphbs({ defaultLayout: 'main'}))
-app.set('view engine','handlebars')
 
-app.get('/',(req,res) => {
- 
-  res.render('index',{ restaurantsData })
+app.use(bodyParser.urlencoded({ extended: true }))
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+const db = mongoose.connection
+
+db.on('error', () => {
+  console.log('mongodb error')
+})
+db.once('open', () => {
+  console.log('mongodb connected')
+})
+app.get('/', (req, res) => {
+
+  res.render('index', { restaurantsData })
 })
 app.get("/search", (req, res) => {
   if (!req.query.keywords) {
