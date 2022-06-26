@@ -1,12 +1,12 @@
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-const Restaurant = require('../restaurant')
+const Restaurant = require('../restaurantlist')
 const RestaurantList = require('./restaurant.json').results
 const db = require('../../config/mongoose')
 const MongoClient = require('mongodb').MongoClient
 const User = require('../user.js')
-const users = require('./users.json')
+const users = require('./user.json')
 const bcrypt = require('bcryptjs')
 
 
