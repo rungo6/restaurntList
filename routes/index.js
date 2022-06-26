@@ -9,7 +9,7 @@ const users = require('./modules/users')
 
 router.use('/restaurants', authenticator, restaurants)
 router.use('/users', users)
-router.use('auth', auth)
+router.use('/auth', auth)
 router.use('/', authenticator, home)
 
 
