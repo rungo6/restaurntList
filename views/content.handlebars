@@ -1,0 +1,44 @@
+
+<h1 class="mb-1 restaurant-show-title">{{restaurants.name}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 mx-auto">
+      <p class="mb-3">
+      <a href="/" class="col-4 text-decoration-none">回首頁</a>
+      </p>
+      <p class="mb-1">
+        <span class="text-secondary">
+          <i class="bi bi-shop pr-2"></i>
+          類別：
+        </span>
+        {{restaurants.category}}
+      </p>
+
+      <p class="mb-1">
+        <span class="text-secondary">
+          <i class="bi bi-geo-alt-fill pr-2"></i>
+          地址：
+        </span>
+        {{restaurants.location}}
+        <a href={{restaurants.google_map}} class="text-secondary" target="_blank">
+          <i class="bi bi-geo-fill pr-2"></i>
+        </a>
+      </p>
+
+      <p class="mb-1">
+        <span class="text-secondary">
+          <i class="bi bi-phone pr-2"></i>
+          電話：
+        </span>
+        {{restaurants.phone}}
+      </p>
+
+      <p class="mb-5">
+        {{restaurants.description}}
+      </p>
+
+      <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurants.image}}" alt="{{restaurants.name}}" style="max-width: 600px;">
+
+    </div>
+  </div>
+</div>

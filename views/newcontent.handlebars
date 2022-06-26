@@ -1,0 +1,60 @@
+<form action="/restaurant/create" method="POST">
+  <h1 class="mb-1 restaurant-show-title">
+   <input type="text" placeholder="餐廳名稱" name="name">
+   </h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 mx-auto">
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="bi bi-shop pr-2"></i>
+            類別：
+          </span>
+          <input type="text" placeholder="" name="category">
+        </p>
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="bi bi-geo-alt-fill pr-2"></i>
+            地址：
+          </span>
+          <input type="text" placeholder="" name="location">
+            地圖座標連結:
+          <input type="text" placeholder="" name="google_map">
+            <i class="bi bi-geo-fill pr-2"></i>
+        </p>
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="bi bi-phone pr-2"></i>
+            電話：
+          </span>
+          <input type="text" placeholder="" name="phone">
+        </p>
+
+        <p class="mb-5">
+           餐廳介紹內容:
+           <input type="text" placeholder="" name="description">
+        </p>
+
+        <p class="mb-5">
+            評價:
+           <input type="text" placeholder="" name="rating">
+        </p>
+
+        <p class="mb-5">
+            餐廳圖片連結:
+          <input type="text" placeholder="" name="image">
+        </p>
+
+        
+      </div>
+      
+      <div class="d-flex justify-content-around">
+      <button type="submit" class="col-4">新增</button>
+      <a href="/" class="col-4 text-decoration-none"><button type="button" class="col-12" >取消並回首頁</button></a>
+      </div>
+  </div>
+  
+</form>
